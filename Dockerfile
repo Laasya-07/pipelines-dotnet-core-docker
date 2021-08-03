@@ -14,4 +14,7 @@ RUN dotnet publish -c Release -o out
 FROM microsoft/aspnetcore
 WORKDIR /app
 COPY --from=build-env /app/out .
+
 ENTRYPOINT ["dotnet", "pipelines-dotnet-core-docker.dll"]
+
+EXPOSE 5000
